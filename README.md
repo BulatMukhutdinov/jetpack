@@ -8,7 +8,7 @@
 7. [Data-Binding](https://developer.android.com/topic/libraries/data-binding)
 
 # Other features
-1. Kotlin coroutines[https://kotlinlang.org/docs/reference/coroutines-overview.html], especially [channels](https://kotlinlang.org/docs/reference/coroutines/channels.html) for data observing
+1. Kotlin [coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html), especially [channels](https://kotlinlang.org/docs/reference/coroutines/channels.html) for data observing
 2. [ViewPager2](https://github.com/googlesamples/android-viewpager2)
 
 # Architecture
