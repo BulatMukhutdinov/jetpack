@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Jetpack</string>
+    <string name="luma">Luminosity is %1$s</string>
+    <string name="share_hint">Share using</string>
+</resources>

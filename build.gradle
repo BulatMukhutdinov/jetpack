@@ -1,0 +1,26 @@
+buildscript {
+    apply from: "scripts/dependencies.gradle"
+
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+    }
+
+    dependencies {
+        classpath gradlePluginDeps.build
+        classpath gradlePluginDeps.kotlin
+        classpath gradlePluginDeps.navSageArgs
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

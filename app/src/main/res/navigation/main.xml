@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    app:startDestination="@id/permissions">
+
+    <fragment
+        android:id="@+id/camera"
+        android:name="tat.mukhutdinov.jetpack.camera.CameraViewModel"
+        android:label="Camera"
+        tools:layout="@layout/camera">
+
+        <action
+            android:id="@+id/to_gallery"
+            android:label="Gallery"
+            app:destination="@id/gallery" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gallery"
+        android:name="tat.mukhutdinov.jetpack.gallery.GalleryViewModel"
+        android:label="Gallery"
+        tools:layout="@layout/gallery">
+
+        <action
+            android:id="@+id/to_gallery"
+            android:label="Camera"
+            app:destination="@id/gallery" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/permissions"
+        android:name="tat.mukhutdinov.jetpack.infrastructure.ui.PermissionsCheck"
+        android:label="PermissionsCheck">
+
+        <action
+            android:id="@+id/to_camera"
+            android:label="Camera"
+            app:destination="@id/camera"
+            app:popUpTo="@id/root" />
+    </fragment>
+</navigation>

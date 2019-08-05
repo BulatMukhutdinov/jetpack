@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+android {
+    compileSdkVersion sdkCompileVersion
+
+    defaultConfig {
+        applicationId "tat.mukhutdinov.jetpack"
+        minSdkVersion sdkMinVersion
+        targetSdkVersion sdkTargetVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/atomicfu.kotlin_module'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':domain')
+
+    implementation jetbrains.kotlinStdlibJdk7
+    implementation jetbrains.coroutinesAndroid
+
+    implementation androidx.coreKtx
+    implementation androidx.constraintLayout
+    implementation androidx.palette
+    implementation androidx.viewpager2
+
+    implementation navigation.fragmentKtx
+    implementation navigation.uiKtx
+
+    implementation koin.android
+    implementation koin.viewModel
+    implementation koin.ext
+
+    implementation cameraX.core
+    implementation cameraX.camera2
+
+    implementation lifecycle.extensions
+    implementation lifecycle.viewmodelKtx
+    kapt lifecycle.compiler
+    implementation lifecycle.viewmodelSavedState
+
+    implementation utils.timber
+    implementation utils.stetho
+    implementation utils.picasso
+    implementation utils.blurry
+}
